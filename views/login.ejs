@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS for styling */
+        body {
+            background-color: #f8f9fa;
+            font-family: serif;
+        }
+
+        .login-form {
+            background-color: #fff;
+            border: 1px solid #d1d1d1;
+            border-radius: 5px;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border: 1px solid #d1d1d1;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .btn {
+            font-weight: 1000;
+        }
+
+        .btn-primary {
+            background-color: hsl(321, 94%, 20%);
+            border-color: #2f0126;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: #2f0126;
+            border-color: #640342;
+            color: white;
+        }
+
+        .btn-primary:focus {
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 login-form">
+                <h2>Login</h2>
+                <form action="/logindata" method="post">
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-Mail</label>
+                        <input type="text" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="text-center">
+                        <!-- Additional buttons -->
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="register" class="btn btn-primary btn-block">Register</a>
+                                </div>
+                                <div class="col">
+                                    <a href="changepassword" class="btn btn-primary btn-block">Forgot Password?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

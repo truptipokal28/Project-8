@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Products</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS for styling */
+        body {
+            background-color: #f8f9fa;
+            font-family: serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: hsl(321, 94%, 20%);
+            border-color: #2f0126;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2f0126;
+            border-color: #640342;
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: #640342;
+            border-color: #2f0126;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #2f0126;
+            border-color: #640342;
+            color: white;
+        }
+
+        .row {
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            width: 100%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card .card-body {
+            padding: 15px;
+        }
+
+        .list-group-item {
+            border: none;
+        }
+
+        .delete-btn,
+        .edit-btn {
+            background-color: hsl(321, 94%, 20%);
+            border: 1px solid #2f0126;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .delete-btn:hover,
+        .edit-btn:hover {
+            background-color: #2f0126;
+            border-color: #640342;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>View Products</h1>
+        <a href="/addproduct" class="btn btn-primary mx-5 mt-3 mb-5">Add product</a>
+        <div class="row">
+        
+            
+            
+
+
+            <% data.map((val) => { %>
+                <div class="card col-3 mx-5" style="width: 100%;">
+                                  <div class="card-body">
+                    <ul class="list-group list-group-flush mt-3">
+                      <li class="list-group-item p text-dark">Category : <%=val.categoryId.category%></li>
+                      <li class="list-group-item p text-dark">SubCategory
+                        : <%=val.subcategoryId.subcategory%></li>
+                      <li class="list-group-item p text-dark">Product : <%= val.product %></li>
+                      <li class="list-group-item p text-dark">Price : <%= val.price %></li>
+                      <li class="list-group-item p text-dark">Qty : <%= val.qty %></li>
+                      <li class="list-group-item p text-dark">Description : <%= val.description %></li>
+                    </ul>
+                    <div class="mt-4 mx-3">
+                      <button class="btn btn-danger">
+                        <a href="/deleteproduct?id=<%= val.id %>" class="text-white">delete</a>
+                      </button>
+                      <button class="btn btn-primary mx-3">
+                        <a href="/editproduct?id=<%= val.id %>" class="text-white">edit</a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+              
+
+
+
+
+
+
+        
+        
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
